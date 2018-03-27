@@ -1,0 +1,21 @@
+//created on: Mar 27, 2018
+package com.sample
+
+import com.sample.app.Person;
+dialect "java"
+rule "Wage"
+when
+Person(hourlyRate * wage > 100 && hourlyRate * wage <1000)
+Person(name : firstName, surname : lastName)
+then
+System.out.println("Hello " + name + " " + surname + "!");
+System.out.println("You are rich!");
+end
+rule "Wage2"
+when
+Person(hourlyRate * wage > 1000)
+Person(name : firstName, surname : lastName)
+then
+System.out.println("Hello " + name + " " + surname + "!");
+System.out.println("You are superrich!");
+end
